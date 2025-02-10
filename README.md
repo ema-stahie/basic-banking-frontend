@@ -1,44 +1,79 @@
 # React Application for Customer and Account Management
 
-This project is a **React application** that interacts with a **Spring backend** to manage customers and accounts. The application allows you to add, update, delete, and search for customers and accounts, providing a user-friendly interface with real-time updates.
+This project is split into two separate repositories:
+
+- **Frontend:** A React application that provides a user-friendly interface for managing customers and accounts.
+- **Backend:** A Spring Boot application that exposes RESTful APIs for customer and account management and uses H2 as its database.
+
+---
+
+## Repositories
+
+- **Frontend Repository:**  
+  [basic-banking-frontend](https://github.com/ema-stahie/basic-banking-frontend.git)
+
+- **Backend Repository:**  
+  [basic-banking-backend](https://github.com/ema-stahie/basic-banking-backend.git)
 
 ---
 
 ## Table of Contents
 
 1. [Installation](#installation)
+    - [Frontend Installation](#frontend-installation)
+    - [Backend Installation](#backend-installation)
 2. [Usage](#usage)
 3. [Features](#features)
 4. [Technologies](#technologies)
 5. [License](#license)
+6. [Acknowledgments](#acknowledgments)
 
 ---
 
 ## Installation
 
-To get started with the project, follow these steps:
+### Frontend Installation
 
-1. **Clone the repository:**
+1. **Clone the Frontend Repository:**
     ```bash
-    git clone https://github.com/repository.git 
+    git clone https://github.com/ema-stahie/basic-banking-frontend.git
     ```
 
-2. **Navigate to the project folder:**
+2. **Navigate to the Project Folder:**
     ```bash
-    cd banking-project
+    cd basic-banking-frontend
     ```
 
-3. **Install the required dependencies:**
+3. **Install Dependencies:**
     ```bash
     npm install
     ```
 
-4. **Run the application locally:**
+4. **Run the Application:**
     ```bash
     npm start
     ```
+    This will start the development server and open the application in your default web browser.
 
-   This will start the development server and open the application in your default web browser.
+---
+
+### Backend Installation
+
+1. **Clone the Backend Repository:**
+    ```bash
+    git clone https://github.com/ema-stahie/basic-banking-backend.git
+    ```
+
+2. **Navigate to the Project Folder:**
+    ```bash
+    cd basic-banking-backend
+    ```
+
+3. **Build and Run the Spring Boot Application:**
+
+   If you're using Maven:
+   ```bash
+   mvn spring-boot:run
 
 ---
 
@@ -91,10 +126,10 @@ This application uses the following technologies:
   - Axios (for API requests)
   
 - **Backend**:
-  - Spring Boot (for backend API)
-
-- **Database**:
-  - MySQL (for storing customer and account data)
+  - Spring Boot
+  - Java
+  - RESTful API design
+  - H2 Database
 
 ---
 
