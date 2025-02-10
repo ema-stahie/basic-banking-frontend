@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .offcanvas-body {
+            background-color: #f8f9fa;
+        }
+        .nav-link {
+            color: #000 !important;
+        }
+        .nav-link:hover {
+            background-color: #ddd;
+        }
+        header {
+            background-color: #343a40;
+        }
+        header h1, header .btn {
+            color: #fff;
+        }
+        footer {
+            background-color: #343a40;
+        }
+        footer p {
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<!-- Header -->
+<header class="bg-dark text-white p-3">
+    <button class="btn btn-outline-light btn-sm" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button">
+        <i class="bi bi-list fs-3"></i>
+    </button>
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1 class="h4 mb-0">Customer and Account Management</h1>
+        <div>
+            <button class="btn btn-outline-light btn-sm me-2">Login</button>
+            <button class="btn btn-outline-light btn-sm">Register</button>
+        </div>
+    </div>
+</header>
+
+<!-- Sidebar (Offcanvas) -->
+<div class="offcanvas offcanvas-start w-25" tabindex="-1" id="offcanvas" data-bs-keyboard="false" data-bs-backdrop="false">
+    <div class="offcanvas-header">
+        <h6 class="offcanvas-title d-none d-sm-block">Menu</h6>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body px-0">
+        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-start" id="menu">
+            <li class="nav-item">
+                <a href="index.html" class="nav-link text-truncate">
+                    <i class="fs-5 bi-house"></i><span class="ms-1 d-none d-sm-inline">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="customers.html" class="nav-link text-truncate">
+                    <i class="fs-5 bi-person-circle"></i><span class="ms-1 d-none d-sm-inline">Customers</span>
+                </a>
+            </li>
+            <li>
+                <a href="accounts.html" class="nav-link text-truncate">
+                    <i class="fs-5 bi-person"></i><span class="ms-1 d-none d-sm-inline">Accounts</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- Main Content Section for Accounts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col min-vh-100 py-3">
+            <h2>Accounts 
+                <button class="btn btn-success ms-3" data-bs-toggle="modal" data-bs-target="#addAccountModal">
+                    <i class="bi bi-plus-circle"></i> Add New Account
+                </button>
+            </h2>
+
+            <!-- Search Bar -->
+            <div class="mb-3">
+                <input type="text" class="form-control" id="searchAccount" placeholder="Search by ID, Type, or Customer ID">
+            </div>
+
+            <!-- Accounts Table -->
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Type of Account</th>
+                        <th scope="col">Balance</th>
+                        <th scope="col">Customer ID</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Hardcoded data (you can dynamically generate this table) -->
+                    <tr>
+                        <td>2001</td>
+                        <td>Checking</td>
+                        <td>$1,500</td>
+                        <td>1001</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Update</button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2002</td>
+                        <td>Savings</td>
+                        <td>$2,000</td>
+                        <td>1002</td>
+                        <td>
+                            <button class="btn btn-warning btn-sm">Update</button>
+                            <button class="btn btn-danger btn-sm">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark text-white mt-auto py-3">
+    <div class="container text-center">
+        <p>&copy; 2025 Customer and Account Management</p>
+    </div>
+</footer>
+
+<!-- Modal for Add New Account -->
+<div class="modal fade" id="addAccountModal" tabindex="-1" aria-labelledby="addAccountModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addAccountModalLabel">Add New Account</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="accountType" class="form-label">Account Type</label>
+                        <select class="form-select" id="accountType" required>
+                            <option value="Checking">Checking</option>
+                            <option value="Savings">Savings</option>
+                            <option value="Credit">Credit</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="accountBalance" class="form-label">Balance</label>
+                        <input type="number" class="form-control" id="accountBalance" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="customerID" class="form-label">Customer ID</label>
+                        <input type="number" class="form-control" id="customerID" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-success">Add Account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
